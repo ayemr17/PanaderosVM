@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GSPVM</string>
+    <string name="title_activity_navigation_drawer">Sindicato _ VM</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_pueblos">Ver Pueblos</string>
+    <string name="menu_panaderias">Ver Panaderias</string>
+    <string name="menu_algo">Algo Extra</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="menu_desconectarse">Desconectarse</string>
+    <string name="sindicato_vm">Sintidato VM</string>
+    <string name="menu_home">Ir al Home</string>
+
+    <string name="errorParseJsonPueblos">Error al parsear el json pueblos.json</string>
+    <string name="successParseJsonPueblos">Json Pueblos parseado correctamente!</string>
+    <string name="jsonPueblos">pueblos.json</string>
+
+    <string name="errorParseJsonPanaderias">Error al parsear el json panaderias.json</string>
+    <string name="successParseJsonPanaderias">Json Panaderias parseado correctamente!</string>
+    <string name="jsonPanaderias">panaderias.json</string>
+
+</resources>

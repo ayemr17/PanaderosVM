@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Panaderia 1",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 20,
+    "id_pueblo": 2,
+    "latlong": "123445"
+  },
+  {
+    "id": 2,
+    "nombre": "Panaderia 2",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 13,
+    "id_pueblo": 2,
+    "latlong": "123445"
+  },
+  {
+    "id": 3,
+    "nombre": "Panaderia 3",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 15,
+    "id_pueblo": 1,
+    "latlong": "123445"
+  },
+  {
+    "id": 4,
+    "nombre": "Panaderia 4",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 5,
+    "id_pueblo": 4,
+    "latlong": "123445"
+  },
+  {
+    "id": 5,
+    "nombre": "Panaderia 5",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 9,
+    "id_pueblo": 4,
+    "latlong": "123445"
+  },
+  {
+    "id": 6,
+    "nombre": "Panaderia 6",
+    "direccion": "Nose",
+    "telefono": "123445",
+    "id_empleador": 1,
+    "cantidad_empleados": 23,
+    "id_pueblo": 6,
+    "latlong": "123445"
+  }
+]

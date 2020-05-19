@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Gabi",
+    "departamento": "Nose",
+    "latlong": "123445"
+  },
+  {
+    "id": 2,
+    "nombre": "Fofó",
+    "departamento": "Nose",
+    "latlong": "123445"
+  },
+  {
+    "id": 3,
+    "nombre": "Miliki",
+    "departamento": "Nose",
+    "latlong": "123445"
+  },
+  {
+    "id": 4,
+    "nombre": "Milikito",
+    "departamento": "Nose",
+    "latlong": "123445"
+  },
+  {
+    "id": 5,
+    "nombre": "Carozo",
+    "departamento": "Nose",
+    "latlong": "123445"
+  },
+  {
+    "id": 6,
+    "nombre": "Narizota",
+    "departamento": "Nose",
+    "latlong": "123445"
+  }
+]

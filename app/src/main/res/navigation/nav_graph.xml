@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.panaderosvm._view_ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_pueblos"
+            app:destination="@id/nav_pueblos"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_panaderias"
+            app:destination="@id/nav_panaderias"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_panaderias"
+        android:name="com.example.panaderosvm._view_ui.panaderias.PanaderiasFragment"
+        android:label="@string/menu_panaderias"
+        tools:layout="@layout/fragment_panaderias" >
+        <action
+            android:id="@+id/action_nav_panaderias_to_detallePanaderiaFragment"
+            app:destination="@id/detallePanaderiaFragment"
+            app:popUpTo="@id/nav_panaderias" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pueblos"
+        android:name="com.example.panaderosvm._view_ui.pueblos.PueblosFragment"
+        android:label="@string/menu_pueblos"
+        tools:layout="@layout/fragment_pueblos" >
+        <action
+            android:id="@+id/action_nav_pueblos_to_nav_panaderias"
+            app:destination="@id/nav_panaderias"
+            app:popUpTo="@id/nav_pueblos" />
+    </fragment>
+
+    <activity
+        android:id="@+id/nav_login"
+        android:name="com.example.panaderosvm._view_ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login"/>
+    <activity
+        android:id="@+id/nav_main"
+        android:name="com.example.panaderosvm._view_ui.MainActivity"
+        android:label="app_bar_navigation_drawer"
+        tools:layout="@layout/app_bar_navigation_drawer" />
+    <fragment
+        android:id="@+id/detallePanaderiaFragment"
+        android:name="com.example.panaderosvm._view_ui.panaderias.DetallePanaderiaFragment"
+        android:label="detalle_panaderia_fragment"
+        tools:layout="@layout/detalle_panaderia_fragment" />
+
+    <action
+        android:id="@+id/action_global_PueblosFragment"
+        app:destination="@id/nav_pueblos"
+        app:popUpTo="@id/nav_home" />
+
+    <action
+        android:id="@+id/action_global_PanaderiasFragment"
+        app:destination="@id/nav_panaderias"
+        app:popUpTo="@id/nav_home" />
+
+    <action
+        android:id="@+id/action_global_LoginActivity"
+        app:destination="@id/nav_login"
+        app:popUpTo="@id/nav_home"
+        app:popUpToInclusive="true" />
+
+
+
+
+
+
+</navigation>
