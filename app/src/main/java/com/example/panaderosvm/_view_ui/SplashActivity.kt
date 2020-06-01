@@ -34,6 +34,10 @@ class SplashActivity : AppCompatActivity() {
         launchAnimation()
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     private fun launchAnimation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Glide.with(this)

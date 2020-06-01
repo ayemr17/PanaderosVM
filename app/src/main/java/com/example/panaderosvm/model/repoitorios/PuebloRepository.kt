@@ -84,5 +84,19 @@ class PuebloRepository(context: Context) : BaseRemoteRepository(), CoroutineScop
             responseObjetBasic.onSuccess(listPueblos)
         }
 
+    @WorkerThread
+    suspend fun getSinglePuebloWithId(id : Int, responseObjetBasic: ResponseObjetBasic<PueblosEntity>) =
+        withContext(Dispatchers.IO) {
+            val pueblo: PueblosEntity? = mPuebloDao.getSinglePuebloWithId(id)
+            if (pueblo != null) {
+                /*for (odsEntity in listPueblos) {
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                }*/
+            }
+            responseObjetBasic.onSuccess(pueblo!!)
+        }
 
 }

@@ -13,11 +13,6 @@ import kotlin.coroutines.CoroutineContext
 
 class PanaderiasViewModel(application: Application) : BaseViewModel(application), CoroutineScope {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "PANADERIASSSSS"
-    }
-    val text: LiveData<String> = _text
-
     private val job: Job = SupervisorJob()
     private var panaderiasRepository = PanaderiasRepository(application)
 

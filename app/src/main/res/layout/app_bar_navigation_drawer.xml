@@ -30,6 +30,18 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+        <TextView
+            android:id="@+id/areaSinConexion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:textAlignment="center"
+            android:text="@string/sin_conexion"
+            android:visibility="gone"
+            android:textColor="@color/colorRed"
+            android:gravity="center_horizontal" />
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_navigation_drawer" />

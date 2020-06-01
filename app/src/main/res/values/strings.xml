@@ -24,5 +24,6 @@
     <string name="errorParseJsonPanaderias">Error al parsear el json panaderias.json</string>
     <string name="successParseJsonPanaderias">Json Panaderias parseado correctamente!</string>
     <string name="jsonPanaderias">panaderias.json</string>
+    <string name="sin_conexion">Sin Coneción a internet</string>
 
 </resources>

@@ -9,27 +9,36 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.panaderosvm._view_ui.MainActivity
 import com.example.panaderosvm.R
+import com.example.panaderosvm._view_ui.Base.BaseActivity
+import com.example.panaderosvm._view_ui.Base.BasicMethods
 import com.example.panaderosvm._view_ui.DatabaseViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity(), BasicMethods {
 
     var email: String = ""
     var pass: String = ""
-    lateinit var loginViewModel : LoginViewModel
+    lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        loginViewModel =
-            ViewModelProviders.of(this).get(LoginViewModel::class.java)
-
+        initObservables()
+        init()
         initListeners()
     }
 
-    private fun initListeners() {
-        usuario_textImputLayout_activityLogin.editText?.addTextChangedListener(object : TextWatcher {
+    override fun initObservables() {
+        loginViewModel =
+            ViewModelProviders.of(this).get(LoginViewModel::class.java)
+    }
+
+    override fun init() {}
+
+    override fun initListeners() {
+        usuario_textImputLayout_activityLogin.editText?.addTextChangedListener(object :
+            TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -41,7 +50,8 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        contraseña_textImputLayout_activityLogin.editText?.addTextChangedListener(object : TextWatcher {
+        contraseña_textImputLayout_activityLogin.editText?.addTextChangedListener(object :
+            TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -73,7 +83,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun goHome() {
         //findNavController().navigate(R.id.action_nav_login_to_nav_main)
-
 
         val nIntent = Intent(this, MainActivity::class.java)
         startActivity(nIntent)

@@ -12,21 +12,17 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_nav_pueblos"
-            app:destination="@id/nav_pueblos"
-            app:popUpTo="@id/nav_home" />
+            app:destination="@id/nav_pueblos" />
         <action
             android:id="@+id/action_nav_home_to_nav_panaderias"
-            app:destination="@id/nav_panaderias"
-            app:popUpTo="@id/nav_home" />
+            app:destination="@id/nav_panaderias" />
         <action
             android:id="@+id/action_nav_home_to_nav_login"
             app:destination="@id/nav_login"
-            app:popUpTo="@id/nav_home"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_nav_home_self"
-            app:destination="@id/nav_home"
-            app:popUpTo="@id/nav_home" />
+            app:destination="@id/nav_home" />
     </fragment>
 
     <fragment
@@ -36,8 +32,7 @@
         tools:layout="@layout/fragment_panaderias" >
         <action
             android:id="@+id/action_nav_panaderias_to_detallePanaderiaFragment"
-            app:destination="@id/detallePanaderiaFragment"
-            app:popUpTo="@id/nav_panaderias" />
+            app:destination="@id/detallePanaderiaFragment" />
     </fragment>
 
     <fragment
@@ -47,8 +42,7 @@
         tools:layout="@layout/fragment_pueblos" >
         <action
             android:id="@+id/action_nav_pueblos_to_nav_panaderias"
-            app:destination="@id/nav_panaderias"
-            app:popUpTo="@id/nav_pueblos" />
+            app:destination="@id/nav_panaderias" />
     </fragment>
 
     <activity
@@ -65,22 +59,19 @@
         android:id="@+id/detallePanaderiaFragment"
         android:name="com.example.panaderosvm._view_ui.panaderias.DetallePanaderiaFragment"
         android:label="detalle_panaderia_fragment"
-        tools:layout="@layout/detalle_panaderia_fragment" />
+        tools:layout="@layout/fragment_detalle_panaderia" />
 
     <action
         android:id="@+id/action_global_PueblosFragment"
-        app:destination="@id/nav_pueblos"
-        app:popUpTo="@id/nav_home" />
+        app:destination="@id/nav_pueblos" />
 
     <action
         android:id="@+id/action_global_PanaderiasFragment"
-        app:destination="@id/nav_panaderias"
-        app:popUpTo="@id/nav_home" />
+        app:destination="@id/nav_panaderias" />
 
     <action
         android:id="@+id/action_global_LoginActivity"
         app:destination="@id/nav_login"
-        app:popUpTo="@id/nav_home"
         app:popUpToInclusive="true" />
 
 
