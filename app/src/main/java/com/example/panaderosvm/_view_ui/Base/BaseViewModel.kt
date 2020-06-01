@@ -3,8 +3,9 @@ package com.example.panaderosvm._view_ui.Base
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.example.panaderosvm._view_ui.splashActivity.OnResponse
 
-abstract class BaseViewModel(application: Application) : AndroidViewModel(application)
+abstract class BaseViewModel(application: Application) : AndroidViewModel(application), OnResponse
 {
     var ERROR_SOCKET_CLOSED =
         "socket closed" //este error tambien ocurre cuando el usuario cancela una solicitud de alguna api

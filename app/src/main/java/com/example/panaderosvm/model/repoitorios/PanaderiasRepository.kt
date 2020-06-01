@@ -98,4 +98,21 @@ class PanaderiasRepository(context: Context) : BaseRemoteRepository(), Coroutine
                 responseObjetBasic.onSuccess(listPanaderias)
             }
         }
+
+    @WorkerThread
+    suspend fun getSinglePanaderiaWithId(id : Int, responseObjetBasic: ResponseObjetBasic<PanaderiasEntity>) =
+        withContext(Dispatchers.IO) {
+            val panaderia: PanaderiasEntity? = mPanaderiasDao.getSinglePanaderiaWithId(id)
+            if (panaderia != null) {
+                /*for (odsEntity in listPueblos) {
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                    odsEntity.nombre = decrypt(odsEntity.nombre).toString()
+                }*/
+            }
+            responseObjetBasic.onSuccess(panaderia!!)
+        }
+
+
 }

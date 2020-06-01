@@ -9,7 +9,6 @@ import android.util.Log
 
 class NetworkStatusReceiver : BroadcastReceiver() {
 
-
     private var connectionCallback: ConnectionCallback? = null
 
     override fun onReceive(context: Context?, intent: Intent) {

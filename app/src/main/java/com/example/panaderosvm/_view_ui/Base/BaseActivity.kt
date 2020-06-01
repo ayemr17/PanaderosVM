@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    protected val TAG = this.javaClass.simpleName
+    protected open val TAG = this.javaClass.simpleName
     private var currentFragment: Fragment? = null
     var progressBarDialog: AlertDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {

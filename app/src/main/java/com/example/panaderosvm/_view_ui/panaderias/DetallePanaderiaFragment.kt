@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.Observer
 import com.example.panaderosvm.R
 import com.example.panaderosvm._view_ui.DetallePanaderiaViewModel
 
@@ -27,7 +25,7 @@ class DetallePanaderiaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.detalle_panaderia_fragment, container, false)
+        val root = inflater.inflate(R.layout.fragment_detalle_panaderia, container, false)
 
         /*val textView: TextView = root.findViewById(R.id.text_panaderia)
         detalleViewModel.text.observe(viewLifecycleOwner, Observer {

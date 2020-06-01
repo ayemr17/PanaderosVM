@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -18,6 +19,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.panaderosvm.R
+import com.example.panaderosvm._view_ui.Base.BaseActivity
 import com.example.panaderosvm._view_ui.Base.BasicMethods
 import com.example.panaderosvm._view_ui.home.HomeFragment
 import com.example.panaderosvm._view_ui.login.LoginActivity
@@ -26,16 +28,19 @@ import com.example.panaderosvm._view_ui.pueblos.PueblosFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.indra.applicability.utils.connectivity.ConnectionCallback
+import com.indra.applicability.utils.connectivity.ConnectionListener
+import com.indra.applicability.utils.connectivity.NetworkChecker
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
+import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 import kotlinx.android.synthetic.main.content_navigation_drawer.*
 
-class MainActivity : AppCompatActivity(),
-    BasicMethods {
+class MainActivity : BaseActivity(), BasicMethods, ConnectionCallback, ConnectionListener {
 
-    protected val TAG = this.javaClass.simpleName
+    override val TAG = this.javaClass.simpleName
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
-    //private lateinit var networkChecker : NetworkChecker
+    private lateinit var networkChecker : NetworkChecker
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,13 +72,18 @@ class MainActivity : AppCompatActivity(),
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        initObservables()
+        init()
         initListeners()
+
 
     }
 
     override fun initObservables() {}
 
-    override fun init() {}
+    override fun init() {
+        initNetworkChecker()
+    }
 
     override fun initListeners() {
         nav_view_principal.setNavigationItemSelectedListener {
@@ -102,6 +112,12 @@ class MainActivity : AppCompatActivity(),
             }
             return@setNavigationItemSelectedListener false
         }
+    }
+
+    private fun initNetworkChecker() {
+        networkChecker = NetworkChecker()
+        networkChecker.init(this, this, this)
+        networkChecker.checkNetworkConnection(this, this)
     }
 
     private fun gotoHome() {
@@ -174,6 +190,7 @@ class MainActivity : AppCompatActivity(),
                 } else if (fragment[0] is PueblosFragment) {
                     //SI ESTOY EN PUEBLOFRAGMENT SIEMPRE VUELVE A LA PANTALLA ANTERIOR
                     super.onBackPressed()
+                    init()
                 } else if (fragment[0] is PanaderiasFragment) {
                     //SI ESTOY EN PANADERIAFRAGMENT VUELVE A LA PANTALLA ANTERIOR
                     super.onBackPressed()
@@ -196,4 +213,20 @@ class MainActivity : AppCompatActivity(),
     fun drawerLayoutBackPressed() {
         drawer_layout.closeDrawer(GravityCompat.START)
     }
+
+    override fun hasActiveConnection(hasActiveConnection: Boolean) {
+//        val textSinConexion = Ac
+
+        if (!hasActiveConnection) {
+            // TODO: Aca hacer q cambie de color la barra de notificaciones
+            areaSinConexion.visibility = View.VISIBLE
+        } else {
+            // TODO: Aca hacer q vuelva a la normalidad la barra de notificaciones
+            areaSinConexion.visibility = View.GONE
+        }
+    }
+
+    override fun onWifiTurnedOn() {}
+
+    override fun onWifiTurnedOff() {}
 }
