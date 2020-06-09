@@ -1,4 +1,4 @@
-package com.indra.applicability.utils.connectivity
+package com.example.panaderosvm.utils.connectivity
 
 import android.content.Context
 import android.content.Intent

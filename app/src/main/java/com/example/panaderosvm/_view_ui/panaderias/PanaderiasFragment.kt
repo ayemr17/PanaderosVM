@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.panaderosvm.R
 import com.example.panaderosvm._view_ui.Base.BaseFragment
 import com.example.panaderosvm._view_ui.Base.BasicMethods
+import com.example.panaderosvm._view_ui.DetallePanaderiaViewModel
 import com.example.panaderosvm.model.local.panaderias.PanaderiasEntity
 import com.example.panaderosvm.model.local.pueblos.PueblosEntity
 import kotlinx.android.synthetic.main.fragment_panaderias.*
@@ -33,8 +35,8 @@ class PanaderiasFragment : BaseFragment(), BasicMethods, PanaderiasRecyclerAdapt
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        panaderiasViewModel =
-            ViewModelProviders.of(this).get(PanaderiasViewModel::class.java)
+        panaderiasViewModel = ViewModelProvider(this).get(PanaderiasViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_panaderias, container, false)
         /*val textView: TextView = root.findViewById(R.id.text_panaderia)
         panaderiasViewModel.text.observe(viewLifecycleOwner, Observer {

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.panaderosvm._view_ui.MainActivity
@@ -12,6 +13,7 @@ import com.example.panaderosvm.R
 import com.example.panaderosvm._view_ui.Base.BaseActivity
 import com.example.panaderosvm._view_ui.Base.BasicMethods
 import com.example.panaderosvm._view_ui.DatabaseViewModel
+import com.example.panaderosvm._view_ui.home.HomeViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity(), BasicMethods {
@@ -30,8 +32,7 @@ class LoginActivity : BaseActivity(), BasicMethods {
     }
 
     override fun initObservables() {
-        loginViewModel =
-            ViewModelProviders.of(this).get(LoginViewModel::class.java)
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 
     override fun init() {}
