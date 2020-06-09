@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.panaderosvm.R
 import com.example.panaderosvm.utils.Mapas
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var homeViewModel: HomeViewModel
+
     private lateinit var mMap: GoogleMap
     var permisosUnicacion: PermisosUbicacion =
         PermisosUbicacion()
@@ -36,8 +38,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        homeViewModel  = ViewModelProvider(this).get(HomeViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         /*val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {

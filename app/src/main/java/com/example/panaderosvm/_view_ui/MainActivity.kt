@@ -28,9 +28,9 @@ import com.example.panaderosvm._view_ui.pueblos.PueblosFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.indra.applicability.utils.connectivity.ConnectionCallback
-import com.indra.applicability.utils.connectivity.ConnectionListener
-import com.indra.applicability.utils.connectivity.NetworkChecker
+import com.example.panaderosvm.utils.connectivity.ConnectionCallback
+import com.example.panaderosvm.utils.connectivity.ConnectionListener
+import com.example.panaderosvm.utils.connectivity.NetworkChecker
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 import kotlinx.android.synthetic.main.content_navigation_drawer.*

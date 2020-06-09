@@ -11,12 +11,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.panaderosvm.R
 import com.example.panaderosvm._view_ui.Base.BaseFragment
 import com.example.panaderosvm._view_ui.Base.BasicMethods
 import com.example.panaderosvm._view_ui.panaderias.PanaderiasFragment
+import com.example.panaderosvm._view_ui.panaderias.PanaderiasViewModel
 import com.example.panaderosvm.model.local.pueblos.PueblosEntity
 import kotlinx.android.synthetic.main.fragment_pueblos.*
 import java.io.Serializable
@@ -32,8 +34,8 @@ class PueblosFragment : BaseFragment(), BasicMethods, PueblosRecyclerAdapter.Cli
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        pueblosViewModel =
-            ViewModelProviders.of(this).get(PueblosViewModel::class.java)
+        pueblosViewModel = ViewModelProvider(this).get(PueblosViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_pueblos, container, false)
         /*val textView: TextView = root.findViewById(R.id.text_pueblos)
         pueblosViewModel.text.observe(viewLifecycleOwner, Observer {
